@@ -42,14 +42,15 @@ const CreateProfile = ({
 	} = formData;
 	const onChange = e =>
 		setFormData({ ...formData, [e.target.name]: e.target.value });
-	const onSubmit = e => {
+	
+		const onSubmit = e => {
 		e.preventDefault();
 		createProfile(formData, history);
 	};
 	useEffect(() => {
 		getCurrentProfile();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [getCurrentProfile]);
+
 	return loading && profile === null ? (
 		<Redirect to='/dashboard' />
 	) : (

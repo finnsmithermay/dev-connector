@@ -6,13 +6,14 @@ const User = require('../../models/User');
 const {check, validationResult, body} = require('express-validator/check');
 const request = require('request');
 const config = require('config');
+const {Post} = require('../../models/Post');
 
 
 //@route   Get api/profile/me
 //@des     get current users profile 
 //@access  private 
 router.get('/me',auth, async(req, res) => {
-
+    CLEAR_PROFILE
 
 
     try {
@@ -170,8 +171,9 @@ router.get('/user/:user_id', async (req, res)=>{
 router.delete('/', auth , async (req, res)=>{
 
     try {
-        //todo - remove users posts
+        //Remove user posts - ours may difer here becasue dont want to delete users tickets
        
+        await Post.deleteMany({user: req.user.id});
         //remove profile
         await Profile.findOneAndRemove({user:req.user.id});
        //remove user
