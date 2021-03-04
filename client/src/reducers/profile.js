@@ -29,7 +29,7 @@ export default function(state = initialState, action){
                     ...state,
                     profiles:payload,
                     loading: false
-                }
+                };
 
             case PROFILE_ERROR:
                 return{
