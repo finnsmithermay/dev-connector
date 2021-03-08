@@ -2,5 +2,6 @@
     "mongoURI": "mongodb+srv://FinnAdmin:Flash12345@cluster0.yqqgv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     "jwtSecret": "mysecrettoken",
     "githubClientId":"cf1f40bc55d2d2274b47",
-    "githubSecret":"e21f0e2c73f4a6cf5f8c3471c2b73b2ef4b33a4f"
+    "githubSecret":"830ad6910ceef96d7392e9caf6768b8026b0ac60"
+    
 }

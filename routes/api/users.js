@@ -6,6 +6,8 @@ const User = require('../../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
+const normalize = require('normalize-url');
+
 //@route   Get api/users
 //@des     register user
 //@access  Public
@@ -72,7 +74,7 @@ router.post('/', [
         }
         );
 
-    } catch (error) {
+    } catch (err) {
         console.error(err.message);
         res.status(500).send('server error');
     }
